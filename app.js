@@ -19,7 +19,7 @@ routes
 
       emitter.emit('data', data);
       res.writeHead(200, { 'Access-Control-Allow-Origin': '*' });
-      res.end('ok');
+      res.end();
     });
   })
   .get('/', function(req, res, next) {

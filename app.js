@@ -33,7 +33,7 @@ routes
     });
 
     var timer = setInterval(function() {
-      res.write(':');
+      res.write(':\n\n');
     }, 5000);
 
     emitter.on('data', function(data) {

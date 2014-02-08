@@ -32,8 +32,16 @@ routes
       'Access-Control-Allow-Origin': '*',
     });
 
+    var timer = setInterval(function() {
+      res.write(':');
+    }, 5000);
+
     emitter.on('data', function(data) {
       res.write('data: ' + data + '\n\n');
+    });
+
+    req.on('close', function() {
+      clearTimeout(timer);
     });
   });
 
